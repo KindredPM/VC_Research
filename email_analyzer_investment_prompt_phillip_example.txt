@@ -1,0 +1,61 @@
+You are to analyze an email from the inbox of phillip@kindredpm.ai, filter it by following certain steps, then do research on the company.
+If it meets any of the disqualification criteria of the filters, output "0" immediately and nothing else.
+
+## Disqualification Criteria:
+
+1.  **Is the email not the newest version of the email chain?** You can check by comparing it to ((current_lists)). If it is not the newest version, output "0" immediately and nothing else.
+2.  **Based on the newest email chain, did the company already invest in KindredPM?** If so, output "0" immediately and nothing else.
+3.  **Is the thread with someone who can realistically invest in KindredPM?** A realistic investor would work at a VC/PE/Investment firm. Be strict about this. If not, output "0" immediately and nothing else.
+4.  **Has the thread mentioned anything, even in passing or indirectly, about investment in KindredPM?** If not, output "0" immediately and nothing else.
+
+## Preprocessing for Investment Research:
+
+1.  What is the name of the point of contact of the potential investor?
+2.  What is their email?
+3.  What is their domain? If it is a generic domain name like 'outlook.com' or 'gmail.com', output [username]@domain_name to avoid overlapping keys.
+4.  Quickly summarize the email chain in 5 sentences max. What happened? Where did the conversation leave off? Were there any action items? Because of disqualification criteria #2, this potential investor must have not invested in KindredPM. Why, or did they just ignore us?
+
+## Investment Research:
+Search the web to find out the following information about the potential investor. You will have to run multiple queries to find this information. If a query fails to retrieve information for a specific question, run another query that will help find that information.
+
+1.  What is their typical check size for investment? (e.g. $50k - $250k, $1m+, $2m~5m, etc.)
+2.  What is their most recent fund size? (e.g. Fund IV: $100m, Fund V: $250m, etc.)
+3.  When did their last fund close?
+4.  How many investments did they make in the past 12 months?
+5.  How many active companies are in their investment portfolio?
+6.  What Industries do they focus their investments on? (e.g. AI, real estate, proptech, etc.)
+7.  What verticals do they focus their investments on? (e.g. SaaS, enterprise, consumer, etc.)
+8.  What relevant companies are in their portfolio to KindredPM? KindredPM builds Agentic AI for Property Management. In this upcoming round, KindredPM is aiming to become an AI-native PMS that will compete with Yardi, Appfolio, etc.
+9.  Where is their office located? List all relevant offices (e.g. New York and San Francisco, Chicago, etc.)
+10. KindredPM is looking to raise about $5M at a valuation of $20M - $30M. Why would they want to invest?
+11. Quickly describe their fund in a few sentences.
+
+Finally, output your results in a strict JSON object with the key value being the domain name of the potential investor and the value being the JSON object containing the results.
+
+Your output should be in a markdown code block formatted as JSON.
+
+```json
+{
+    "domain_name (or username@domain_name for generic domains)": {
+        "reasoning": "Walk through all the disqualification criteria and explain why the email chain does or does not meet each criteria.",
+        "decision": "1",
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "domain": "example.com",
+        "conversation_summary": "Preprocessing for Investment Research Question 4",
+        "typical_check_size": "Investment Research Question 1",
+        "most_recent_fund_size": "Investment Research Question 2",
+        "last_fund_close_date": "Investment Research Question 3",
+        "investment_count_last_12_months": "Investment Research Question 4",
+        "active_portfolio_count": "Investment Research Question 5",
+        "industries": ["Investment Research Question 6"],
+        "verticals": ["Investment Research Question 7"],
+        "relevant_portfolio_companies": ["Investment Research Question 8"],
+        "office_locations": ["Investment Research Question 9"],
+        "investment_reason": "Investment Research Question 10",
+        "fund_description": "Investment Research Question 11"
+    }
+}
+```
+If the email chain meets any of the disqualification criteria, output "0" immediately and nothing else.
+Your input: ((input))
