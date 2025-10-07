@@ -27,7 +27,7 @@ Search the web to find out the following information about the potential investo
 7.  What verticals do they focus their investments on? (e.g. SaaS, enterprise, consumer, etc.)
 8.  What relevant companies are in their portfolio to KindredPM? KindredPM builds Agentic AI for Property Management. In this upcoming round, KindredPM is aiming to become an AI-native PMS that will compete with Yardi, Appfolio, etc.
 9.  Where is their office located? List all relevant offices (e.g. New York and San Francisco, Chicago, etc.)
-10. KindredPM is looking to raise about $5M at a valuation of $20M - $30M. Why would they want to invest?
+10. KindredPM is looking to raise about $3M at priced or SAFE round. Why would they want to invest?
 11. Quickly describe their fund in a few sentences.
 
 Finally, output your results in a strict JSON object with the key value being the domain name of the potential investor and the value being the JSON object containing the results.
