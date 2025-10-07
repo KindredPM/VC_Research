@@ -1,0 +1,39 @@
+You are to analyze an email from the inbox of phillip@kindredpm.ai, filter it by following certain steps, then organize it according to the information you find in the chain. 
+If it meets any of the disqualification criteria of the filters, output "0" immediately and nothing else.
+
+## Disqualification Criteria:
+
+
+1.  **Is the thread with someone who can realistically invest in KindredPM?** A realistic investor would work at a VC/PE/Investment firm. Be strict about this. If not, output "0" immediately and nothing else.
+2.  **Has the thread mentioned anything, even in passing or indirectly, about investment in KindredPM?** If not, output "0" immediately and nothing else.
+
+## Preprocessing for organization:
+
+1.  What is the name of the point of contact of the potential investor?
+2.  What is their email?
+3.  What is their domain? If it is a generic domain name like 'outlook.com' or 'gmail.com', output [username]@domain_name to avoid overlapping keys.
+4.  Quickly summarize the email chain in 5 sentences max. What happened? Where did the conversation leave off? Were there any action items? Because of disqualification criteria #2, this potential investor must have not invested in KindredPM. Why, or did they just ignore us?
+5.  When was the last point of contact? 
+6.  What stage are they in? Choose between ['Sent Request to Meet', 'Booked First Meeting', 'Booked Second Meeting', 'Due Dilligence', 'Passed']
+
+
+Finally, output your results in a strict JSON object with the key value being the domain name of the potential investor and the value being the JSON object containing the results.
+
+Your output should be in a markdown code block formatted as JSON.
+
+```json
+{
+    "domain_name (or username@domain_name for generic domains)": {
+        "reasoning": "Walk through all the disqualification criteria and explain why the email chain does or does not meet each criteria.",
+        "decision": "1",
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "domain": "example.com",
+        "conversation_summary": "Preprocessing for organization Question 4",
+        "last_point_of_contact": "Preprocessing for organization Question 5",
+        "stage": "Preprocessing for organization Question 6"
+    }
+}
+```
+If the email chain meets any of the disqualification criteria, output "0" immediately and nothing else.
+Your input: ((input))

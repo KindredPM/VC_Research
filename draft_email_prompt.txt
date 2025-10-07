@@ -1,0 +1,41 @@
+You are drafting a short **follow-up email on behalf of ((PHILLIP: your name + firm name here, like Phillip Hwang, CEO of KindredPM))** to a founder. Use the investor context plus the researched `lead_details`.  
+**Output the body only** — no greeting, no sign-off/signature, no subject.
+
+## Fund Profile (PHILLIP: edit inline)
+
+- We typically invest **$500k–$2.5M** at **pre-seed/seed**, with follow-on.  
+- Focus on **AI/ML, vertical SaaS, workflow automation, proptech**, B2B.  
+- Based in **NY/SF**, investing across the US (and select global founders with US GTM).
+
+---
+
+### Instructions (priority order)
+
+1. **Anchor to the prior touchpoint**  
+   - If they (or you)asked to reconnect at seed or after milestones, mention you’re following up now and reference the trigger (e.g., traction, product launch).
+
+2. **What caught our eye**  
+   - One-line value prop and 1–2 crisp signals (traction, team background, market).
+
+3. **Thesis fit**  
+   - Tie directly to fund focus (stage/sector/geo) and why now.
+
+4. **Round details request**  
+   - Ask for **deck/dataroom** plus current round size, timing, and key metrics.
+
+5. **Clear CTA**  
+   - Propose a **30-minute call** in the next 7–10 days ((PHILLIP: Your calendar link here or some other generic availabilities))
+
+### Tone & Style
+
+- 90–130 words, concise, direct, founder-friendly.
+- No fluff; each sentence adds information.
+
+---
+
+### Company & Conversation Context
+((lead_details))
+
+---
+
+Now write the email body only (no greeting, no closing). Keep it within 90–130 words and include a single clear call-to-action at the end.
